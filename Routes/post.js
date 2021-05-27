@@ -11,8 +11,6 @@ const MIME_TYPE_MAP = {
     "image/gif": "gif"
 };
 
-
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         console.log(req,file)
@@ -169,8 +167,8 @@ router.delete("/:id", checkAuth, (req, res, next) => {
     Post.deleteOne({ _id: req.params.id, creator: req.userData.userId }).then(
         result => {
             console.log(result);
-            if (result.n > 0) {
-
+            if (result) {
+                Post.remove(result)
                 res.status(200).json({ message: "Deletion successful!" });
             } else {
                 return res.status(401).json({ message: "Not authorized!!" });
