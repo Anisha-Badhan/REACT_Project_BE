@@ -8,6 +8,9 @@ User can post an event with image and can see events or posts for other users
 Runs the app in the developement mode.
 Open http://localhost:3001/api/ to view it in the browser.
 
+The project has been deployed using Heroku and can be vieded at :
+https://react-project-be.herokuapp.com/api/posts
+
 **Testing the APIs**
 You can use Postman to test all the endpoints
 
