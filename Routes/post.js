@@ -34,11 +34,6 @@ const storage = multer.diskStorage({
     }
 });
 
-
-
-
-
-
 router.post("",
     checkAuth,
     multer({ storage: storage }).single("image"),
